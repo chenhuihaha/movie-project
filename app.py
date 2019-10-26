@@ -1,9 +1,3 @@
-"""
-@Time    : 2019/10/20 下午3:33
-@Author  : chenhui
-@FileName: app.py
-@Software: PyCharm
-"""
 from flask import Flask
 
 app = Flask(__name__)
@@ -16,3 +10,4 @@ def index():
 
 if __name__ == '__main__':
     app.run()
+

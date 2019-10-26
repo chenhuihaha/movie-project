@@ -1,27 +1,25 @@
-"""
-@Time    : 2019/10/20 下午3:50
-@Author  : chenhui
-@FileName: views.py
-@Software: PyCharm
-"""
-
 from . import home
-from flask import render_template, url_for, redirect
+from flask import render_template, redirect, url_for
 
 
-@home.route('/login/')
+@home.route("/")
+def index():
+    return render_template("home/index.html")  # 匹配对应蓝图下的模板
+
+
+@home.route("/login/")
 def login():
-    return render_template('home/login.html')
+    return render_template("home/login.html")
 
 
-@home.route('/logout/')
+@home.route("/logout/")
 def logout():
-    return redirect(url_for('home.login'))
+    return redirect(url_for("home.login"))  # url_for返回蓝图下的函数对应的路由地址
 
 
-@home.route('/regist/')
-def regist():
-    return render_template('home/regist.html')
+@home.route("/register/")
+def register():
+    return render_template("home/register.html")
 
 
 @home.route('/user/')
@@ -40,22 +38,17 @@ def comments():
 
 
 @home.route('/loginlog/')
-def loginlog():
+def login_log():
     return render_template('home/loginlog.html')
 
 
 @home.route('/moviecol/')
-def moviecol():
+def movie_col():
     return render_template('home/moviecol.html')
 
 
-@home.route('/')
-def index():
-    return render_template('home/index.html')
-
-
-@home.route('/animation/')
-def animation():
+@home.route('/animtaion/')
+def animtation():
     return render_template('home/animation.html')
 
 
@@ -67,6 +60,3 @@ def search():
 @home.route('/play/')
 def play():
     return render_template('home/play.html')
-
-
-

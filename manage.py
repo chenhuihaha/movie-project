@@ -1,10 +1,6 @@
 """
-@Time    : 2019/10/20 下午3:47
-@Author  : chenhui
-@FileName: manage.py
-@Software: PyCharm
+入口脚本
 """
-
 from app import app
 
 if __name__ == '__main__':
